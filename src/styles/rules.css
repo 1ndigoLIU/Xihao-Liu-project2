@@ -1,0 +1,42 @@
+/* Page head spacing */
+.page-head { padding: 24px 0 8px; }
+.page-title { margin: 0 0 6px 0; }
+.lead { margin: 0 0 12px 0; color: #cbd5e1; }
+
+/* Section spacing */
+.rules, .tips, .credits { padding: 8px 0 24px; }
+
+/* Rule list (numbered) */
+.rule-list {
+    margin: 0;
+    padding-left: 18px;          /* default ordered-list indent */
+}
+.rule-list li { margin: 6px 0; }
+
+/* Credit links as a simple list */
+.credit-links {
+    list-style: none;
+    margin: 8px 0 12px;
+    padding: 0;
+}
+.credit-links li { margin: 4px 0; }
+
+/* School logo size and spacing */
+.school-logo {
+    display: inline-block;
+    width: 240px;      /* desktop: comfortable width for a wide logo */
+    max-width: 100%;   /* never overflow the container */
+    height: auto;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .school-logo { width: 180px; }
+}
+
+/* phone */
+@media (max-width: 560px) {
+    .school-logo { width: 140px; }
+}

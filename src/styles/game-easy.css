@@ -1,0 +1,204 @@
+/* Page head (match hard page style) */
+.page-head {
+    padding: 24px 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+.page-title { margin: 0; }
+.timer { color: #cbd5e1; }
+
+/* Board container */
+.board-wrap {
+    margin-top: 8px;
+    max-width: 420px;                 /* a bit smaller than the 9×9 board */
+}
+
+/* Core board table — Only apply to Easy (6×6) game */
+.game-easy .board {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;               /* keep even widths per column */
+    background: #111827;
+    border: 2px solid #e5e7eb;         /* outer thick border */
+}
+
+/* Cell box - Only apply to Easy (6×6) game */
+.game-easy .board td {
+    padding: 0;
+    border: 1px solid #334155;         /* thin inner lines */
+    vertical-align: middle;
+}
+
+/* Thicker lines for 2×3 subgrids - Only apply to Easy (6×6) game */
+.game-easy .board tr:nth-child(2n+1) td { border-top-width: 5px; }
+.game-easy .board tr:nth-child(2n)   td { border-bottom-width: 5px; }
+.game-easy .board td:nth-child(3n+1) { border-left-width: 5px; }
+.game-easy .board td:nth-child(3n)   { border-right-width: 5px; }
+
+/* Inputs: perfect squares - Only apply to Easy (6×6) game */
+.game-easy .board input {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;               /* height equals width → square */
+    border: 0;
+    outline: none;
+    text-align: center;
+    background: #0b1220;
+    color: #e5e7eb;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Given (prefilled) cells: disabled and visually distinct - Only apply to Easy (6×6) game */
+.game-easy .board input[disabled],
+.game-easy .board input.given {
+    background: #1a2236;
+    color: #e5e7eb;
+    cursor: default;
+}
+
+/* Focus style for editable cells - Only apply to Easy (6×6) game */
+.game-easy .board input:focus {
+    background: #0e1a33;
+    outline: 2px solid #60a5fa;
+    outline-offset: -2px;
+}
+
+/* Selected cell style - Only apply to Easy (6×6) game */
+.game-easy .board input.selected {
+    background: #1e3a5f;
+    outline: 2px solid #60a5fa;
+    outline-offset: -2px;
+}
+
+/* Invalid cell style (red border) - Only apply to Easy (6×6) game */
+.game-easy .board input.invalid {
+    outline: 2px solid #ef4444 !important;
+    background: #2a1620;
+    color: #ef4444;
+}
+
+/* Hint cell style (green/yellow highlight) - Only apply to Easy (6×6) game */
+.game-easy .board input.hint {
+    background: #1a3a2a !important;
+    animation: hint-pulse 2s ease-in-out infinite;
+    /* Ensure hint doesn't affect layout - explicitly maintain all layout properties */
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    display: block !important;
+    border: 0 !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@keyframes hint-pulse {
+    0%, 100% {
+        background: #1a3a2a;
+    }
+    50% {
+        background: #1e4a3a;
+    }
+}
+
+/* Hover style for editable cells - Only apply to Easy (6×6) game */
+.game-easy .board input:hover:not(.given):not(.invalid) {
+    background: #152238;
+    cursor: pointer;
+}
+
+.game-easy .board input.hover:not(.given):not(.invalid) {
+    background: #152238;
+}
+
+/* Hide spin buttons for type=number (Chrome/Edge/Safari) - Only apply to Easy (6×6) game */
+.game-easy .board input[type=number]::-webkit-outer-spin-button,
+.game-easy .board input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Hide spin buttons for Firefox - Only apply to Easy (6×6) game */
+.game-easy .board input[type=number] { -moz-appearance: textfield; }
+
+/* Game controls */
+.game-controls {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-hint,
+.btn-new-game,
+.btn-reset {
+    padding: 10px 20px;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    background: #0f1a2e;
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-hint:hover,
+.btn-new-game:hover,
+.btn-reset:hover {
+    background: #1a2a3e;
+    transform: translateY(-1px);
+}
+
+.btn-hint:active,
+.btn-new-game:active,
+.btn-reset:active {
+    transform: translateY(0);
+}
+
+.btn-hint:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-hint:disabled:hover {
+    background: #0f1a2e;
+    transform: none;
+}
+
+/* Congratulations message */
+.congratulations {
+    margin: 24px 0;
+    padding: 20px;
+    background: #13233c;
+    border: 2px solid #60a5fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.congratulations h2 {
+    margin: 0 0 12px 0;
+    color: #93c5fd;
+    font-size: 24px;
+}
+
+.congratulations p {
+    margin: 0;
+    color: #e5e7eb;
+    font-size: 16px;
+}
+
+/* Allow full width on very small screens */
+@media (max-width: 420px) {
+    .board-wrap { max-width: 100%; }
+    .game-controls {
+        flex-direction: column;
+    }
+    .btn-hint,
+    .btn-new-game,
+    .btn-reset {
+        width: 100%;
+    }
+}
