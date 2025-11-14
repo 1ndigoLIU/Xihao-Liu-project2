@@ -4,9 +4,9 @@ A single-player Sudoku game built with React, featuring two difficulty modes (Ea
 
 **Author:** Xihao Liu  
 **Course:** CS5610 Web Development  
-**Project:** Project 2 - Sudoku (JavaScript, React and State Management)
+**Project:** Project 2 - Sudoku
 
-## 🎮 Features
+## Features
 
 ### Core Functionality
 - **Two Game Modes:**
@@ -21,11 +21,11 @@ A single-player Sudoku game built with React, featuring two difficulty modes (Ea
 - **Completion Detection:** Board locks when puzzle is solved, displays congratulations message
 
 ### Bonus Features
-- ✅ **Local Storage:** Game state persists across browser refreshes (Easy and Normal modes stored separately)
-- ✅ **Backtracking Algorithm:** Ensures each puzzle has a unique solution
-- ✅ **Hint System:** Highlights a cell with exactly one valid answer
+- **Local Storage:** Game state persists across browser refreshes (Easy and Normal modes stored separately)
+- **Backtracking Algorithm:** Ensures each puzzle has a unique solution
+- **Hint System:** Highlights a cell with exactly one valid answer
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend Framework:** React 19.2.0
 - **Routing:** React Router DOM 7.9.6
@@ -33,7 +33,7 @@ A single-player Sudoku game built with React, featuring two difficulty modes (Ea
 - **Build Tool:** Vite 7.2.2
 - **Styling:** Custom CSS with responsive design
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -53,7 +53,7 @@ npm run dev
 
 4. Open your browser and navigate to `http://localhost:5173`
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -86,7 +86,7 @@ src/
     └── game-hard.css
 ```
 
-## 🎯 Key Implementation Details
+## Key Implementation Details
 
 ### State Management
 - Uses React Context API with `useReducer` for centralized state management
@@ -109,7 +109,7 @@ src/
 - Clears on game completion or reset
 - **Location:** `src/utils/localStorageUtils.js`
 
-## 🌐 Routes
+## Routes
 
 - `/` - Home page
 - `/games` - Game selection page
@@ -120,11 +120,11 @@ src/
 - `/login` - Login page
 - `/register` - Registration page
 
-## 📱 Responsive Design
+## Responsive Design
 
 The application is fully responsive and works on both desktop and mobile browsers. The layout adapts to different screen sizes with appropriate styling.
 
-## 🚀 Deployment
+## Deployment
 
 Build for production:
 ```bash
@@ -136,11 +136,11 @@ Preview production build:
 npm run preview
 ```
 
-## 📝 License
+## License
 
 This project is part of CS5610 Web Development coursework at Northeastern University.
 
-## 👤 Author
+## Author
 
 **Xihao Liu**
 - Email: liu.xiha@northeastern.edu
