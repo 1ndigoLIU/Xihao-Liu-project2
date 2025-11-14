@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Basic head -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sudoku Arcade — Home</title>
+
+    <!-- Preload font -->
+    <link rel="preload" href="assets/fonts/cheltenham-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/Sudoku.svg" type="image/svg+xml">
+
+    <!-- CSS: common first, then page-specific -->
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+<!-- Simple top navbar (directory-style links; no .html) -->
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="./">Sudoku Arcade</a>
+        <nav class="site-nav" aria-label="Primary">
+            <ul class="nav-list">
+                <li><a class="active" href="./">Home</a></li>
+                <li><a href="selection/">Selection</a></li>
+                <li><a href="game-hard/">Hard</a></li>
+                <li><a href="game-easy/">Easy</a></li>
+                <li><a href="rules/">Rules</a></li>
+                <li><a href="high-scores/">High Scores</a></li>
+                <li><a href="login/">Login</a></li>
+                <li><a href="register/">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero: title + simple image -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="page-title">Welcome to <span class="brand-mark">Sudoku Arcade</span></h1>
+            <p class="lead">A simple puzzle hub — pick a mode and start exploring.</p>
+        </div>
+        <div class="hero-media">
+            <!-- Replace with your own local image asset -->
+            <img src="assets/img/Sudoku.svg" alt="A simple Sudoku Arcade illustration" />
+        </div>
+    </section>
+
+    <!-- Simple link cards to important pages -->
+    <section class="links">
+        <h2 class="section-title">Explore</h2>
+        <ul class="link-grid">
+            <li>
+                <h3>Selection</h3>
+                <p>Browse game titles and authors.</p>
+                <a href="selection/">Go to Selection</a>
+            </li>
+
+            <li>
+                <h3>Hard 9×9</h3>
+                <p>Try a classic 9×9 board.</p>
+                <a href="game-hard/">Open Hard</a>
+            </li>
+
+            <li>
+                <h3>Easy 6×6</h3>
+                <p>Warm up with a 6×6 grid.</p>
+                <a href="game-easy/">Open Easy</a>
+            </li>
+
+            <li>
+                <h3>Rules &amp; Credits</h3>
+                <p>How it works and who made it.</p>
+                <a href="rules/">See Rules</a>
+            </li>
+
+            <li>
+                <h3>High Scores</h3>
+                <p>Check the high score board.</p>
+                <a href="high-scores/">View Scores</a>
+            </li>
+
+            <li>
+                <h3>Login / Register</h3>
+                <p>Sign in or create an account.</p>
+                <a href="login/">Login</a> · <a href="register/">Register</a>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2025 Sudoku Arcade · CS5610 Web Development · by Xihao Liu</p>
+    </div>
+</footer>
+</body>
+</html>

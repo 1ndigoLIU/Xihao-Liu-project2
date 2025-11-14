@@ -1,0 +1,89 @@
+/* Page head (match hard page style) */
+.page-head {
+    padding: 24px 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+.page-title { margin: 0; }
+.timer { color: #cbd5e1; }
+
+/* Board container */
+.board-wrap {
+    margin-top: 8px;
+    max-width: 420px;                 /* a bit smaller than the 9×9 board */
+}
+
+/* Core board table — same technique as hard page */
+.board {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;               /* keep even widths per column */
+    background: #111827;
+    border: 2px solid #e5e7eb;         /* outer thick border */
+}
+
+/* Cell box */
+.board td {
+    padding: 0;
+    border: 1px solid #334155;         /* thin inner lines */
+    vertical-align: middle;
+}
+
+/* Thicker lines for 2×3 subgrids */
+.board tr:nth-child(2n+1) td { border-top-width: 2px; }
+.board tr:nth-child(2n)   td { border-bottom-width: 2px; }
+.board td:nth-child(3n+1) { border-left-width: 2px; }
+.board td:nth-child(3n)   { border-right-width: 2px; }
+
+/* Inputs: perfect squares (same as hard page idea) */
+.board input {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;               /* height equals width → square */
+    border: 0;
+    outline: none;
+    text-align: center;
+    background: #0b1220;
+    color: #e5e7eb;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Given (prefilled) cells: disabled and visually distinct */
+.board input[disabled],
+.board input.given {
+    background: #1a2236;
+    color: #e5e7eb;
+    cursor: default;
+}
+
+/* Focus style for editable cells */
+.board input:focus {
+    background: #0e1a33;
+}
+
+/* Hide spin buttons for type=number (Chrome/Edge/Safari) */
+.board input[type=number]::-webkit-outer-spin-button,
+.board input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Hide spin buttons for Firefox */
+.board input[type=number] { -moz-appearance: textfield; }
+
+/* Highlight only when the field is not placeholder-shown AND invalid (empty stays neutral) */
+.board input:not(:placeholder-shown):invalid {
+    outline: 2px solid #ef4444;
+    background: #2a1620;
+}
+
+/* Highlight while focused and invalid */
+.board input:focus:invalid {
+    outline: 2px solid #ef4444;
+}
+
+/* Allow full width on very small screens */
+@media (max-width: 420px) {
+    .board-wrap { max-width: 100%; }
+}

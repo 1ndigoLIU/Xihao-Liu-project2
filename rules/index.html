@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Basic head -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sudoku Arcade — Rules</title>
+
+    <!-- Preload font -->
+    <link rel="preload" href="../assets/fonts/cheltenham-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/Sudoku.svg" type="image/svg+xml">
+
+    <!-- CSS: common first, then page-specific -->
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="rules.css" />
+</head>
+<body>
+<!-- Top navbar -->
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="../">Sudoku Arcade</a>
+        <nav class="site-nav" aria-label="Primary">
+            <ul class="nav-list">
+                <li><a href="../">Home</a></li>
+                <li><a href="../selection/">Selection</a></li>
+                <li><a href="../game-hard/">Hard</a></li>
+                <li><a href="../game-easy/">Easy</a></li>
+                <li><a class="active" href="./">Rules</a></li>
+                <li><a href="../high-scores/">High Scores</a></li>
+                <li><a href="../login/">Login</a></li>
+                <li><a href="../register/">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="page-head">
+        <h1 class="page-title">Rules</h1>
+        <p class="lead">How to play a standard Sudoku-style puzzle.</p>
+    </section>
+
+    <!-- Rules list -->
+    <section class="rules">
+        <h2>Basic rules</h2>
+        <ol class="rule-list">
+            <li>Fill the grid so that each <strong>row</strong> contains the allowed digits without repetition.</li>
+            <li>Each <strong>column</strong> must also contain the allowed digits without repetition.</li>
+            <li>Each outlined <strong>subgrid</strong> (3×3 on 9×9, 2×3 on 6×6) must contain the allowed digits without repetition.</li>
+            <li><strong>Given cells</strong> (prefilled numbers) are fixed and cannot be changed.</li>
+            <li>Use logic and deduction—no guessing required for a valid puzzle.</li>
+        </ol>
+    </section>
+
+    <!-- Tips (optional) -->
+    <section class="tips">
+        <h2>Tips</h2>
+        <ul>
+            <li>Scan rows, columns, and subgrids to find unique candidates.</li>
+            <li>Start with cells that have the fewest possibilities.</li>
+            <li>Keep notes on paper if you like—this site shows only a static mock.</li>
+        </ul>
+    </section>
+
+    <!-- Credits / Made by -->
+    <section class="credits">
+        <h2>Made by</h2>
+        <p>
+            Sudoku Arcade · CS5610 Web Development · by <strong>Xihao Liu</strong>
+        </p>
+        <ul class="credit-links">
+            <li>Email: <a href="mailto:liu.xiha@northeastern.edu">liu.xiha@northeastern.edu</a></li>
+            <li>GitHub: <a href="https://github.com/1ndigoLIU" target="_blank" rel="noopener">github.com/1ndigoLIU</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/xihao-liu" target="_blank" rel="noopener">linkedin.com/in/xihao-liu</a></li>
+        </ul>
+
+        <h3>Credits</h3>
+        <p>
+            <!-- School logo -->
+            <a href="https://www.northeastern.edu/" target="_blank" rel="noopener">
+                <img src="../assets/img/neu-logo.png" alt="Northeastern University logo" class="school-logo">
+            </a>
+        </p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2025 Sudoku Arcade · CS5610 Web Development · by Xihao Liu</p>
+    </div>
+</footer>
+</body>
+</html>

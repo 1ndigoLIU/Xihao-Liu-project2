@@ -1,0 +1,47 @@
+/* Page head spacing */
+.page-head { padding: 24px 0 8px; }
+.page-title { margin: 0 0 6px 0; }
+.lead { margin: 0 0 12px 0; color: #cbd5e1; }
+
+/* Table container: allow horizontal scroll on very small screens */
+.table-wrap { overflow-x: auto; }
+
+/* Basic table styling (beginner friendly) */
+.game-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111827;            /* matches site panel color */
+    border: 1px solid #334155;
+    border-radius: 8px;              /* visual soft corner */
+}
+
+/* Table header */
+.game-table th {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #334155;
+    color: #e5e7eb;
+    white-space: nowrap;
+}
+
+/* Table rows */
+.game-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #334155;
+    color: #e5e7eb;
+}
+
+/* Remove border on last row */
+.game-table tr:last-child td { border-bottom: none; }
+
+/* Links inside table */
+.game-table a { color: #60a5fa; text-decoration: none; }
+.game-table a:hover { text-decoration: underline; }
+
+/* Zebra stripe for readability */
+.game-table tbody tr:nth-child(even) { background: #0f1628; }
+
+/* Responsive: tighter paddings on phones */
+@media (max-width: 560px) {
+    .game-table th, .game-table td { padding: 8px 10px; }
+}
