@@ -22,8 +22,8 @@ A single-player Sudoku game built with React, featuring two difficulty modes (Ea
 
 ### Bonus Features
 - **Local Storage:** Game state persists across browser refreshes (Easy and Normal modes stored separately)
-- **Backtracking Algorithm:** Ensures each puzzle has a unique solution
-- **Hint System:** Highlights a cell with exactly one valid answer
+- **Backtracking Algorithm:** Ensures each puzzle has a unique solution with verification
+- **Hint System:** Two-phase algorithm finds hint cells - first checks for cells with exactly one valid number, then uses backtracking to find "forced" cells that lead to unique solutions
 
 ## Tech Stack
 
@@ -96,11 +96,14 @@ src/
 ### Puzzle Generation
 - **Algorithm:** Formula-based pattern generation with row/column group shuffling
 - **Uniqueness:** Backtracking algorithm ensures each puzzle has exactly one solution
+- **Verification:** `verifyUniqueSolution()` function validates puzzle uniqueness after generation
 - **Location:** `src/utils/sudokuGenerator.js`
 
 ### Hint System
-- Finds cells with exactly one valid number
-- Randomly selects one if multiple options exist
+- **Two-phase algorithm:**
+  1. **Fast check:** Finds cells with exactly one valid number (immediate hints)
+  2. **Backtracking check:** Uses solution counting to find "forced" cells that lead to unique solutions (even if multiple valid numbers exist)
+- Randomly selects one if multiple hint cells are found
 - **Location:** `src/utils/hintUtils.js`
 
 ### Local Storage
