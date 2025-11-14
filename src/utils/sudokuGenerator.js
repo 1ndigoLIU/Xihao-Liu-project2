@@ -131,7 +131,7 @@ function generateCoordinates(size) {
  * @param {number} maxSolutions - Maximum number of solutions to find (default: 2)
  * @returns {number} Number of solutions found (0, 1, or 2+)
  */
-function countSolutions(board, size, maxSolutions = 2) {
+export function countSolutions(board, size, maxSolutions = 2) {
     let solutionCount = 0;
 
     function solve() {
@@ -276,6 +276,17 @@ function extractGivenCells(puzzle, size) {
 }
 
 /**
+ * Verify that a puzzle has exactly one solution
+ * @param {Array} puzzle - The puzzle board
+ * @param {number} size - Board size
+ * @returns {boolean} True if puzzle has exactly one solution
+ */
+export function verifyUniqueSolution(puzzle, size) {
+    const solutions = countSolutions(deepCopy2DArray(puzzle), size, 2);
+    return solutions === 1;
+}
+
+/**
  * Generate a new Sudoku puzzle using backtracking to ensure unique solution
  * @param {number} size - 6 for easy, 9 for normal
  * @returns {Object} { puzzle, solution, givenCells }
@@ -294,6 +305,19 @@ export function generatePuzzle(size) {
 
     // Generate puzzle using backtracking to ensure unique solution
     const puzzle = generatePuzzleWithBacktracking(solved, size, filledCellsNumber);
+
+    // Verify unique solution (safety check)
+    if (!verifyUniqueSolution(puzzle, size)) {
+        console.warn('Generated puzzle does not have unique solution, regenerating...');
+        // Retry once
+        const retryPuzzle = generatePuzzleWithBacktracking(solved, size, filledCellsNumber);
+        if (verifyUniqueSolution(retryPuzzle, size)) {
+            const givenCells = extractGivenCells(retryPuzzle, size);
+            return { puzzle: retryPuzzle, solution: solved, givenCells };
+        }
+        // If still fails, return original (shouldn't happen with correct implementation)
+        console.error('Failed to generate puzzle with unique solution after retry');
+    }
 
     // Track which cells are given (pre-filled)
     const givenCells = extractGivenCells(puzzle, size);
