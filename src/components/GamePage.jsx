@@ -98,30 +98,32 @@ export default function GamePage({ size, title }) {
     return (
         <>
             <main className={`container ${gameTypeClass}`}>
-                <section className="page-head">
-                    <h1 className="page-title">{title}</h1>
-                    <Timer seconds={timer} />
-                </section>
+                <div className="game-content">
+                    <section className="page-head">
+                        <h1 className="page-title">{title}</h1>
+                        <Timer seconds={timer} />
+                    </section>
 
-                {isComplete && <Congratulations time={timer} />}
+                    {isComplete && <Congratulations time={timer} />}
 
-                <SudokuBoard
-                    board={board}
-                    size={gameSize}
-                    givenCells={givenCells}
-                    selectedCell={selectedCell}
-                    invalidCells={invalidCells}
-                    hintCell={hintCell}
-                    onCellSelect={handleCellSelect}
-                    onCellChange={handleCellChange}
-                />
+                    <SudokuBoard
+                        board={board}
+                        size={gameSize}
+                        givenCells={givenCells}
+                        selectedCell={selectedCell}
+                        invalidCells={invalidCells}
+                        hintCell={hintCell}
+                        onCellSelect={handleCellSelect}
+                        onCellChange={handleCellChange}
+                    />
 
-                <GameControls
-                    onHint={handleHint}
-                    onNewGame={newGame}
-                    onReset={resetGame}
-                    isComplete={isComplete}
-                />
+                    <GameControls
+                        onHint={handleHint}
+                        onNewGame={newGame}
+                        onReset={resetGame}
+                        isComplete={isComplete}
+                    />
+                </div>
             </main>
 
             <footer className="site-footer">

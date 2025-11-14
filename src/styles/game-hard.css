@@ -1,16 +1,24 @@
 /* Page head */
-.page-head {
+.game-normal .page-head {
     padding: 24px 0 8px;
     display: flex;
-    align-items: baseline;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
 }
 .page-title { margin: 0; }
 .timer { color: #cbd5e1; }
 
 /* Board container */
-.board-wrap {
-    margin-top: 8px;
+.game-normal .game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-normal .board-wrap {
+    margin: 12px auto 0;
     max-width: 520px;         /* keep it readable on wide screens */
 }
 
@@ -124,8 +132,9 @@
 .game-normal .board input[type=number] { -moz-appearance: textfield; }
 
 /* Game controls */
-.game-controls {
-    margin-top: 24px;
+.game-normal .game-controls {
+    margin: 24px auto 0;
+    max-width: 520px;
     display: flex;
     gap: 12px;
     justify-content: center;
@@ -192,7 +201,7 @@
 
 /* On very small screens, allow the board to scale naturally */
 @media (max-width: 420px) {
-    .board-wrap { max-width: 100%; }
+    .game-normal .board-wrap { max-width: 100%; }
     .game-controls {
         flex-direction: column;
     }

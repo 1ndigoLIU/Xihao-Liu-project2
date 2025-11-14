@@ -1,17 +1,25 @@
 /* Page head (match hard page style) */
-.page-head {
+.game-easy .page-head {
     padding: 24px 0 8px;
     display: flex;
-    align-items: baseline;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
 }
 .page-title { margin: 0; }
 .timer { color: #cbd5e1; }
 
 /* Board container */
-.board-wrap {
-    margin-top: 8px;
-    max-width: 420px;                 /* a bit smaller than the 9×9 board */
+.game-easy .game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-easy .board-wrap {
+    margin: 12px auto 0;
+    max-width: 420px;                 /* keep board readable */
 }
 
 /* Core board table — Only apply to Easy (6×6) game */
@@ -124,8 +132,9 @@
 .game-easy .board input[type=number] { -moz-appearance: textfield; }
 
 /* Game controls */
-.game-controls {
-    margin-top: 24px;
+.game-easy .game-controls {
+    margin: 24px auto 0;
+    max-width: 420px;
     display: flex;
     gap: 12px;
     justify-content: center;
@@ -192,7 +201,7 @@
 
 /* Allow full width on very small screens */
 @media (max-width: 420px) {
-    .board-wrap { max-width: 100%; }
+    .game-easy .board-wrap { max-width: 100%; }
     .game-controls {
         flex-direction: column;
     }
