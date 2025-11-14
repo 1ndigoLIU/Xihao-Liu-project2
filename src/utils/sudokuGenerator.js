@@ -219,6 +219,8 @@ function generatePuzzleWithBacktracking(solvedSudoku, size, filledCellsNumber) {
  * Check if a number can be placed at a given position
  */
 export function isValidPlacement(board, row, col, num, size) {
+    const { height: subgridRows, width: subgridCols } = getGameConfig(size);
+
     // Check row
     for (let c = 0; c < size; c++) {
         if (board[row][c] === num && c !== col) {
@@ -234,12 +236,11 @@ export function isValidPlacement(board, row, col, num, size) {
     }
 
     // Check subgrid
-    const subgridSize = size === 9 ? 3 : 2;
-    const subgridRow = Math.floor(row / subgridSize) * subgridSize;
-    const subgridCol = Math.floor(col / subgridSize) * subgridSize;
+    const subgridRow = Math.floor(row / subgridRows) * subgridRows;
+    const subgridCol = Math.floor(col / subgridCols) * subgridCols;
 
-    for (let r = subgridRow; r < subgridRow + subgridSize; r++) {
-        for (let c = subgridCol; c < subgridCol + subgridSize; c++) {
+    for (let r = subgridRow; r < subgridRow + subgridRows; r++) {
+        for (let c = subgridCol; c < subgridCol + subgridCols; c++) {
             if (board[r][c] === num && (r !== row || c !== col)) {
                 return false;
             }
