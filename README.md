@@ -4,8 +4,8 @@ A single-player Sudoku game built with React, featuring two difficulty modes (Ea
 
 **Author:** Xihao Liu  
 **Course:** CS5610 Web Development  
-**Project:** Project 2 - Sudoku
-**Live site**: https://xihao-liu-project2.onrender.com
+**Project:** Project 2 - Sudoku  
+**Live site:** https://xihao-liu-project2.onrender.com
 
 ## Features
 
