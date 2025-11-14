@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
     const { pathname } = useLocation();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const active = (path) => {
         if (path === "/") {
             return pathname === "/" ? "active" : "";
@@ -13,11 +16,39 @@ export default function Navbar() {
         return pathname === path || pathname.startsWith(path + "/") ? "active" : "";
     };
 
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [pathname]);
+
+    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+    const closeMenu = () => setIsMenuOpen(false);
+
     return (
         <header className="site-header">
             <div className="container header-inner">
                 <Link to="/" className="brand">Sudoku Arcade</Link>
-                <nav className="site-nav" aria-label="Primary">
+
+                <button
+                    type="button"
+                    className="nav-toggle"
+                    aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
+                    aria-expanded={isMenuOpen}
+                    onClick={toggleMenu}
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+
+                <nav className={`site-nav ${isMenuOpen ? "is-open" : ""}`} aria-label="Primary">
+                    <button
+                        type="button"
+                        className="nav-close"
+                        aria-label="Close navigation"
+                        onClick={closeMenu}
+                    >
+                        ×
+                    </button>
                     <ul className="nav-list">
                         <li><Link to="/" className={active("/")}>Home</Link></li>
                         <li><Link to="/games" className={active("/games")}>Selection</Link></li>
@@ -30,6 +61,11 @@ export default function Navbar() {
                     </ul>
                 </nav>
             </div>
+            <div
+                className={`nav-overlay ${isMenuOpen ? "visible" : ""}`}
+                role="presentation"
+                onClick={closeMenu}
+            />
         </header>
     );
 }
