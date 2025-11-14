@@ -13,7 +13,14 @@ export default function Register() {
 
                 {/* Simple mock form (no real submission) */}
                 <section className="auth">
-                    <form className="form" action="#" method="post" aria-label="Register form">
+                    <form 
+                        className="form" 
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            // Mock form submission - no actual functionality
+                        }}
+                        aria-label="Register form"
+                    >
                         <div className="field">
                             <label htmlFor="reg-username">Username</label>
                             <input id="reg-username" name="username" type="text" placeholder="yourname" />

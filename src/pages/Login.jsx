@@ -13,7 +13,14 @@ export default function Login() {
 
                 {/* Simple mock form (no real submission) */}
                 <section className="auth">
-                    <form className="form" action="#" method="post" aria-label="Login form">
+                    <form 
+                        className="form" 
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            // Mock form submission - no actual functionality
+                        }}
+                        aria-label="Login form"
+                    >
                         <div className="field">
                             <label htmlFor="username">Username</label>
                             <input id="username" name="username" type="text" placeholder="yourname" />
