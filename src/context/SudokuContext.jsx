@@ -161,6 +161,7 @@ function sudokuReducer(state, action) {
             return {
                 ...state,
                 ...action.payload,
+                hintCell: null, // Always clear hint when loading saved state
             };
 
         default:
@@ -307,7 +308,7 @@ export function SudokuProvider({ children }) {
         state.selectedCell,
         state.invalidCells,
         state.isComplete,
-        state.hintCell,
+        // hintCell is not saved - hints should not persist across sessions
         // Timer is handled separately with debouncing
     ]);
 

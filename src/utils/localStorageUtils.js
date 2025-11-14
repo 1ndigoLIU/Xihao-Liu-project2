@@ -35,7 +35,7 @@ export function saveGameState(state, size) {
             isComplete: state.isComplete,
             timer: state.timer,
             isTimerRunning: state.isTimerRunning,
-            hintCell: state.hintCell,
+            // hintCell is not saved - hints should not persist across sessions
         };
         localStorage.setItem(storageKey, JSON.stringify(stateToSave));
     } catch (error) {

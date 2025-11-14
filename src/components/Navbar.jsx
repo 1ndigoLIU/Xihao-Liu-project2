@@ -6,7 +6,11 @@ export default function Navbar() {
         if (path === "/") {
             return pathname === "/" ? "active" : "";
         }
-        return pathname === path || pathname.startsWith(path) ? "active" : "";
+        // For /games, only match exactly /games, not /games/easy or /games/normal
+        if (path === "/games") {
+            return pathname === "/games" ? "active" : "";
+        }
+        return pathname === path || pathname.startsWith(path + "/") ? "active" : "";
     };
 
     return (
