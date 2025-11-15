@@ -2,7 +2,6 @@
  * Local Storage utilities for Sudoku game state persistence
  * Handles saving and loading game state for Easy (6x6) and Normal (9x9) games separately
  */
-
 const STORAGE_KEYS = {
     EASY: 'sudoku_game_state_easy',
     NORMAL: 'sudoku_game_state_normal',

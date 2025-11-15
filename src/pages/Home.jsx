@@ -6,7 +6,6 @@ export default function Home() {
     return (
         <>
             <main className="container">
-                {/* Hero: title + simple image */}
                 <section className="hero">
                     <div className="hero-text">
                         <h1 className="page-title">Welcome to <span className="brand-mark">Sudoku Arcade</span></h1>
@@ -17,7 +16,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Simple link cards to important pages */}
                 <section className="links">
                     <h2 className="section-title">Explore</h2>
                     <ul className="link-grid">

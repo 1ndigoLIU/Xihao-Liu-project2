@@ -24,7 +24,6 @@ export default function GameSelection() {
                     <p className="lead">Pick a title below to open game.</p>
                 </section>
 
-                {/* Table layout: Title + Author. Title is the link target. */}
                 <div className="table-wrap">
                     <table className="game-table">
                         <thead>

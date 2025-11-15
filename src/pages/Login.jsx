@@ -11,13 +11,12 @@ export default function Login() {
                     <p className="lead">Sign in to continue.</p>
                 </section>
 
-                {/* Simple mock form (no real submission) */}
                 <section className="auth">
                     <form 
                         className="form" 
                         onSubmit={(e) => {
                             e.preventDefault();
-                            // Mock form submission - no actual functionality
+                            // Mock form submission, no actual functionality
                         }}
                         aria-label="Login form"
                     >

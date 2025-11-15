@@ -11,7 +11,6 @@ export default function Register() {
                     <p className="lead">Create your Sudoku Arcade account to enjoy the game and save your records.</p>
                 </section>
 
-                {/* Simple mock form (no real submission) */}
                 <section className="auth">
                     <form 
                         className="form" 

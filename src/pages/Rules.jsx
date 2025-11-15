@@ -10,7 +10,6 @@ export default function Rules() {
                     <p className="lead">How to play a standard Sudoku-style puzzle.</p>
                 </section>
 
-                {/* Rules list */}
                 <section className="rules">
                     <h2>Basic rules</h2>
                     <ol className="rule-list">
@@ -22,7 +21,6 @@ export default function Rules() {
                     </ol>
                 </section>
 
-                {/* Tips (optional) */}
                 <section className="tips">
                     <h2>Tips</h2>
                     <ul>
@@ -32,7 +30,6 @@ export default function Rules() {
                     </ul>
                 </section>
 
-                {/* Credits / Made by */}
                 <section className="credits">
                     <h2>Made by</h2>
                     <p>
@@ -46,7 +43,6 @@ export default function Rules() {
 
                     <h3>Credits</h3>
                     <p>
-                        {/* School logo */}
                         <a href="https://www.northeastern.edu/" target="_blank" rel="noopener noreferrer">
                             <img src="/assets/img/neu-logo.png" alt="Northeastern University logo" className="school-logo" />
                         </a>

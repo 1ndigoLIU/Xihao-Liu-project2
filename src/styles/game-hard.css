@@ -48,7 +48,7 @@
 .game-normal .board input {
     display: block;           /* let width follow the cell's content box */
     width: 100%;
-    aspect-ratio: 1 / 1;      /* height equals width → perfect square */
+    aspect-ratio: 1 / 1;      /* height equals width (perfect square) */
     border: 0;
     outline: none;
     text-align: center;
